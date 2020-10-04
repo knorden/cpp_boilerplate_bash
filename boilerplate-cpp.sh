@@ -8,7 +8,7 @@
 #######################################################################
 
 ## path to template:
-templ="/mnt/d/workbench/git.mine/cpp/templ-ws"
+templ_path=""
 
 
 ## prompt the user to enter name of workspace:
@@ -19,7 +19,7 @@ read string
 ## If workspace NOT already exists, create it:
 if [ ! -d "$string" ]; then
 	mkdir "$string"
-	cp -r $templ/* $string/
+	cp -r $templ_path/* $string/
 else echo "ERROR: WORKSPACE ALREADY EXISTS."
 fi
 
