@@ -7,25 +7,41 @@
 ##                                                                   ##
 #######################################################################
 
-## path to template:
-templ_path=""
-
-
-## prompt the user to enter name of workspace:
+############
+## HEADER ##
+############
 echo "\n>>>> C++ WORKSPACE GENERATOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-echo ">>>> Hello, hello! Enter name of the workspace to be created: "
-read string
 
-## If workspace NOT already exists, create it:
-if [ ! -d "$string" ]; then
+
+    ## prompt for this system's username:
+    echo "Hello! Hello! Enter your username:"
+    read user
+
+    
+    ## If .dev/.devscripts/ has not already existed, create it:
+    script_path="/home/$user/.dev"
+    if [ ! -d $script_path ]; then
+	mkdir "$script_path" && mkdir "$script_path/.devscripts"
+
+    ## path to template:
+    templ_path="/home/$user/.dev/.devscripts/boilerplate-cpp.sh"
+
+    ## prompt the user to enter name of workspace:
+    echo ">>>> Hello, hello! Enter name of the workspace to be created: "
+    read string
+
+    ## If workspace NOT already exists, create it:
+    if [ ! -d "$string" ]; then
 	mkdir "$string"
 	cp -r $templ_path/* $string/
-else echo "ERROR: WORKSPACE ALREADY EXISTS."
-fi
+    else echo "ERROR: WORKSPACE ALREADY EXISTS."
+    fi
 
-## Navigate into the new workspace
-cd $string
+    ## Navigate into the new workspace
+    cd $string
 
 
 
-## END OF SCRIPT.
+#####################
+## END OF SCRIPT.  ##
+#####################
