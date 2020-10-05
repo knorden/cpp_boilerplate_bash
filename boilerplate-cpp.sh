@@ -3,45 +3,50 @@
 
 #######################################################################
 ##                                                                   ##
-## SHELL SCRIPT: TO GENERATE C++ WORKSPACE FOLDER FROM TEMPLATE      ##
+##  SHELL SCRIPT: TO GENERATE C++ WORKSPACE FOLDER FROM TEMPLATE     ##
 ##                                                                   ##
 #######################################################################
 
-############
-## HEADER ##
-############
-echo "\n>>>> C++ WORKSPACE GENERATOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    ##################################
+    ##  HEADER                      ##
+    ##################################
+    echo "\n>>>> C++ WORKSPACE GENERATOR \
+	    	~~~~~~~~~~~~~~~~~~~~~~~~\
+		~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
 
-    ## prompt for this system's username:
-    echo "Hello! Hello! Enter your username:"
-    read user
+
+	##################################
+	##  START OF SCRIPT:            ##
+	##################################
+
+	## prompt for this system's username:
+	echo "Hello! Hello! Enter your username:"
+	read user
 
     
-    ## If .dev/.devscripts/ has not already existed, create it:
-    script_path="/home/$user/.dev"
-    if [ ! -d $script_path ]; then
+    	## If .dev/.devscripts/ has not already existed, create it:
+    	script_path="/home/$user/.dev"
+    	if [ ! -d $script_path ]; then
 	mkdir "$script_path" && mkdir "$script_path/.devscripts"
 
-    ## path to template:
-    templ_path="/home/$user/.dev/.devscripts/boilerplate-cpp.sh"
+	## path to template:
+	templ_path="/home/$user/.dev/.devscripts/boilerplate-cpp.sh"
 
-    ## prompt the user to enter name of workspace:
-    echo ">>>> Hello, hello! Enter name of the workspace to be created: "
-    read string
+	## prompt the user to enter name of workspace:
+	echo ">>>> Hello, hello! Enter name of the workspace to be created: "
+	read string
 
-    ## If workspace NOT already exists, create it:
-    if [ ! -d "$string" ]; then
-	mkdir "$string"
-	cp -r $templ_path/* $string/
-    else echo "ERROR: WORKSPACE ALREADY EXISTS."
-    fi
+	## If workspace NOT already exists, create it:
+	if [ ! -d "$string" ]; then
+		mkdir "$string"
+		cp -r $templ_path/* $string/
+    	else echo "ERROR: WORKSPACE ALREADY EXISTS."
+    	fi
 
-    ## Navigate into the new workspace
-    cd $string
+    	## Navigate into the new workspace
+    	cd $string
 
-
-
-#####################
-## END OF SCRIPT.  ##
-#####################
+	##################################
+	##  END OF SCRIPT.              ##
+	##################################
