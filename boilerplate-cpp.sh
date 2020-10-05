@@ -29,8 +29,8 @@
 
     	script_path="/home/$user/.dev"
     	if [ ! -d $script_path ]; then
-	mkdir "$script_path" && mkdir "$script_path/.devscripts"
-
+		mkdir "$script_path" && mkdir "$script_path/.devscripts"
+	fi
 
 ############
 ## TO-DO --> ADD COPY CONSTRUCTOR FOR THE BOILERPLATE. 
