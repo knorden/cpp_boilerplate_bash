@@ -7,28 +7,34 @@
 ##                                                                   ##
 #######################################################################
 
-    ##################################
-    ##  HEADER                      ##
-    ##################################
+    ###################################################################
+    ##  HEADER                                                       ##
+    ###################################################################
     echo "\n>>>> C++ WORKSPACE GENERATOR \
 	    	~~~~~~~~~~~~~~~~~~~~~~~~\
 		~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
 
 
-	##################################
-	##  START OF SCRIPT:            ##
-	##################################
+	###############################################################
+	##  START OF SCRIPT:                                         ##
+	###############################################################
 
+	## CHECK THIS FIRST:
+	##
+    	## If .dev/.devscripts/ has not already existed, create it:
 	## prompt for this system's username:
 	echo "Hello! Hello! Enter your username:"
 	read user
 
-    
-    	## If .dev/.devscripts/ has not already existed, create it:
     	script_path="/home/$user/.dev"
     	if [ ! -d $script_path ]; then
 	mkdir "$script_path" && mkdir "$script_path/.devscripts"
+
+
+############
+## TO-DO --> ADD COPY CONSTRUCTOR FOR THE BOILERPLATE. 
+############
 
 	## path to template:
 	templ_path="/home/$user/.dev/.devscripts/boilerplate-cpp.sh"
@@ -47,6 +53,6 @@
     	## Navigate into the new workspace
     	cd $string
 
-	##################################
-	##  END OF SCRIPT.              ##
-	##################################
+	###############################################################
+	##  END OF SCRIPT.                                           ##
+	###############################################################
