@@ -46,7 +46,7 @@
 	## If workspace NOT already exists, create it:
 	if [ ! -d "$string" ]; then
 		mkdir "$string"
-		cp -r $templ_path/ $string/
+		cp -r $templ_path/. $string/
     	else echo "ERROR: WORKSPACE ALREADY EXISTS."
     	fi
 
