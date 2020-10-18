@@ -10,9 +10,9 @@
     ###################################################################
     ##  HEADER                                                       ##
     ###################################################################
-    echo "\n>>>> C++ WORKSPACE GENERATOR \
-	    	~~~~~~~~~~~~~~~~~~~~~~~~\
-		~~~~~~~~~~~~~~~~~~~~~~~~\n"
+    echo "\n>>>> C++ WORKSPACE GENERATOR\
+	~~~~~~~~~~~~~~~~~~~~~~~~\
+	~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
 
 
@@ -32,12 +32,8 @@
 #		mkdir "$script_path" && mkdir "$script_path/.devscripts"
 #	fi
 
-############
-## TO-DO --> ADD COPY CONSTRUCTOR FOR THE BOILERPLATE. 
-############
-
 	## path to template:
-	templ_path="/home/$user/.dev/.devscripts/cpp_boilerplate"
+	templ_path="/home/$user/.dev/.devscripts/cpp_boilerplate/templ_workspace"
 
 	## prompt the user to enter name of workspace:
 	echo ">>>> Hello, hello! Enter name of the workspace to be created: "
